@@ -1,0 +1,203 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  padding: 0;
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-container {
+    position: relative;
+    width: 100%;
+    margin-left: 0 !important; /* Remove any left margin */
+  }
+  
+  /* Center the compiler content */
+  .compiler-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    padding: 10px 5px;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-bg-4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* General reusable styles */
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+  background-color: var(--accent-blue);
+  color: var(--light-text-1);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-cyan);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--dark-bg-3);
+  color: var(--light-text-2);
+  border: 1px solid var(--dark-bg-4);
+}
+
+.light .btn-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid #ced4da;
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-bg-4);
+  border-color: var(--accent-blue);
+}
+
+.light .btn-secondary:hover {
+  background-color: #dee2e6;
+  border-color: var(--accent-primary);
+}
+
+.btn-success {
+  background-color: var(--signal-green);
+  color: var(--dark-bg-1);
+}
+
+.btn-success:hover {
+  background-color: var(--accent-green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-danger {
+  background-color: var(--signal-red);
+  color: var(--light-text-1);
+}
+
+.btn-danger:hover {
+  background-color: var(--error);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 6px 8px; /* Reduced padding */
+    font-size: 12px; /* Smaller font size */
+    min-width: auto;
+  }
+  
+  .output-actions .btn {
+    display: inline-flex;
+    width: 31%; /* Slightly wider to fit better */
+    justify-content: center;
+  }
+  
+  .output-actions {
+    gap: 4px; /* Reduced gap between buttons */
+  }
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-control input, 
+.form-control textarea, 
+.form-control select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--polar-night-4);
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.form-control input:focus, 
+.form-control textarea:focus, 
+.form-control select:focus {
+  outline: none;
+  border-color: var(--frost-3);
+}
+
+.error-message {
+  color: var(--aurora-red);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: var(--aurora-green);
+  font-size: 14px;
+  margin-top: 5px;
+}

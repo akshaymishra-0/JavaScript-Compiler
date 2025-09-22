@@ -1,0 +1,150 @@
+.sidebar {
+  height: auto;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--dark-bg-4);
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.light .sidebar {
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar.open {
+  width: 240px;
+}
+
+.sidebar.closed {
+  width: 40px;
+  padding: 0;
+}
+
+.file-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--dark-bg-4);
+  height: 48px;
+  background-color: var(--dark-bg-3);
+}
+
+/* Add light mode styling for file container */
+.light .file-container {
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.current-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+.file-icon {
+  color: var(--accent-blue);
+  font-size: 14px;
+}
+
+.filename {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-file-btn, .toggle-sidebar-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.add-file-btn:hover, .toggle-sidebar-btn:hover {
+  color: var(--accent-cyan);
+  background-color: var(--dark-bg-4);
+}
+
+.light .add-file-btn:hover, .light .toggle-sidebar-btn:hover {
+  color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.open-sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 16px;
+  width: 40px;
+  height: 48px;
+  transition: all 0.2s ease;
+}
+
+.open-sidebar-btn:hover {
+  color: var(--accent-cyan);
+  background-color: var(--dark-bg-3);
+}
+
+.light .open-sidebar-btn:hover {
+  color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+}
+
+@media (max-width: 768px) {
+  .sidebar.open {
+    position: fixed;
+    z-index: 1000;
+    height: 100vh;
+    box-shadow: var(--shadow-md);
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar.closed {
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 48px;
+    overflow: visible;
+  }
+
+  .sidebar.closed .open-sidebar-btn {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    z-index: 1000;
+  }
+  
+  .main-container {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

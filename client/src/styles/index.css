@@ -1,0 +1,118 @@
+:root {
+  /* Modern Dark Theme Colors */
+  --dark-bg-1: #121212;
+  --dark-bg-2: #1e1e1e;
+  --dark-bg-3: #252525;
+  --dark-bg-4: #333333;
+  
+  --light-text-1: #ffffff;
+  --light-text-2: #e0e0e0;
+  --light-text-3: #b0b0b0;
+  
+  --accent-blue: #4da6ff;
+  --accent-purple: #c586c0;
+  --accent-cyan: #56cdfc;
+  --accent-green: #6dd390;
+  
+  --signal-red: #ff5757;
+  --signal-orange: #ffaa5a;
+  --signal-yellow: #f1fa8c;
+  --signal-green: #50fa7b;
+  --signal-purple: #bd93f9;
+  
+  /* Shadow variables */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.25);
+  
+  /* Font variables */
+  --font-code: 'Fira Code', monospace;
+  --font-main: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: var(--font-code);
+}
+
+.dark {
+  --bg-primary: var(--dark-bg-1);
+  --bg-secondary: var(--dark-bg-2);
+  --bg-tertiary: var(--dark-bg-3);
+  --text-primary: var(--light-text-1);
+  --text-secondary: var(--light-text-2);
+  --accent-primary: var(--accent-blue);
+  --accent-secondary: var(--accent-cyan);
+  --error: var(--signal-red);
+  --warning: var(--signal-yellow);
+  --success: var(--signal-green);
+  --info: var(--accent-blue);
+  
+  /* Dark theme syntax highlighting colors */
+  --syntax-keyword: var(--accent-purple);
+  --syntax-string: var(--signal-green);
+  --syntax-comment: var(--light-text-3);
+  --syntax-number: var(--signal-orange);
+  --syntax-builtin: var(--accent-cyan);
+  --syntax-operator: var(--signal-red);
+  --syntax-function: var(--accent-blue);
+}
+
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --accent-primary: #0d6efd;
+  --accent-secondary: #6ea8fe;
+  --error: #dc3545;
+  --warning: #f9a825;
+  --success: #2e7d32;
+  --info: #1976d2;
+  
+  /* Additional light theme UI colors */
+  --border-color: #dee2e6;
+  --editor-line-bg: #edf2f7;
+  --editor-line-color: #718096;
+  --editor-line-border: #e2e8f0;
+  --scrollbar-thumb: #cbd5e0;
+  
+  /* Light theme syntax highlighting colors */
+  --syntax-keyword: #0033b3;
+  --syntax-string: #067D17;
+  --syntax-comment: #8C8C8C;
+  --syntax-number: #1750EB;
+  --syntax-builtin: #00627A;
+  --syntax-operator: #E75C1A;
+  --syntax-function: #5B38B3;
+}
+
+button, input, textarea, select {
+  font-family: var(--font-main);
+}

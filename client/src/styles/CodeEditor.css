@@ -1,0 +1,207 @@
+.code-editor-container {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .code-editor-container {
+    margin-top: 10px;
+  }
+}
+
+.custom-editor {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.line-numbers {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 8px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-family: var(--font-code);
+  font-size: 14px;
+  text-align: right;
+  min-width: 40px;
+  overflow-y: hidden;
+  user-select: none;
+  z-index: 2;
+}
+
+.line-number {
+  padding: 0 5px;
+  line-height: 1.5;
+}
+
+.editor-content {
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.code-input {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-code);
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  tab-size: 4;
+  line-height: 1.5;
+  white-space: pre;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.code-display {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-code);
+  font-size: 14px;
+  border: none;
+  padding: 10px;
+  overflow: auto;
+  white-space: pre;
+  tab-size: 4;
+  line-height: 1.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  margin: 0;
+}
+
+/* Dark theme-specific styles */
+.dark .code-input, .dark .code-display {
+  color: var(--light-text-1);
+  background-color: var(--dark-bg-2);
+}
+
+/* Light theme-specific styles */
+.light .code-input, .light .code-display {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
+
+.light .code-editor-container {
+  border: 1px solid var(--border-color);
+}
+
+.light .line-numbers {
+  background-color: var(--editor-line-bg);
+  color: var(--editor-line-color);
+  border-right: 1px solid var(--editor-line-border);
+}
+
+/* Placeholder styling */
+.code-display .placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+  user-select: none;
+}
+
+/* Textarea placeholder */
+.code-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* Scrollbar styling */
+.code-input::-webkit-scrollbar, .code-display::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.code-input::-webkit-scrollbar-track, .code-display::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+.code-input::-webkit-scrollbar-thumb, .code-display::-webkit-scrollbar-thumb {
+  background: var(--dark-bg-4);
+  border-radius: 4px;
+}
+
+.light .code-input::-webkit-scrollbar-thumb, .light .code-display::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.dark .code-input::-webkit-scrollbar-thumb:hover, .dark .code-display::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+.light .code-input::-webkit-scrollbar-thumb:hover, .light .code-display::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Syntax highlighting styles */
+.dark .syntax-keyword {
+  color: var(--syntax-keyword);
+  font-weight: bold;
+}
+
+.dark .syntax-string {
+  color: var(--syntax-string);
+}
+
+.dark .syntax-comment {
+  color: var(--syntax-comment);
+}
+
+.dark .syntax-number {
+  color: var(--syntax-number);
+}
+
+.dark .syntax-builtin {
+  color: var(--syntax-builtin);
+}
+
+.dark .syntax-operator {
+  color: var(--syntax-operator);
+}
+
+.dark .syntax-function {
+  color: var(--syntax-function);
+}
+
+/* Light theme syntax highlighting */
+.light .syntax-keyword {
+  color: var(--syntax-keyword);
+  font-weight: bold;
+}
+
+.light .syntax-string {
+  color: var(--syntax-string);
+}
+
+.light .syntax-comment {
+  color: var(--syntax-comment);
+}
+
+.light .syntax-number {
+  color: var(--syntax-number);
+}
+
+.light .syntax-builtin {
+  color: var(--syntax-builtin);
+}
+
+.light .syntax-operator {
+  color: var(--syntax-operator);
+}
+
+.light .syntax-function {
+  color: var(--syntax-function);
+}
